@@ -107,3 +107,17 @@ body {
     border-radius: 100px !important;
     border: 0px !important;
   }
+
+  .navbar-brand {
+    color: black !important;
+  }
+
+  .dropdown-menu a:hover {
+    background-color: #ffe48c;
+    color: #333333 !important;
+  }
+  
+  .dropdown-menu a {
+    background-color: #ffe48c;
+    color: #333333 !important;
+  }

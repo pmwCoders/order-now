@@ -9,6 +9,9 @@
         <!-- Custom CSS -->
         <link rel="stylesheet" type="text/css" href="{% static 'shop/main.css' %}">
 
+        <!-- Google Material Design CSS -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
@@ -16,7 +19,7 @@
     </head>
     <body>
         <header class="site-header">
-            <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+            <nav class="navbar navbar-expand-md navbar-light bg-steel fixed-top">
             <div class="container">
                 <a class="navbar-brand mr-4" href="/">OrderNow</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,8 +31,16 @@
                 </div>
                 <!-- Navbar Right Side -->
                 <div class="navbar-nav">
-                    <a class="nav-item nav-link" href="#">Login</a>
-                    <a class="nav-item nav-link" href="#">Register</a>
+                    {% if user.is_authenticated %}
+                        <div class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="material-icons">account_circle</span> {{ user.first_name }} {{ user.last_name }}</a>
+                            <div class="dropdown-menu bg-steel border-0">
+                                <a class="dropdown-item" href=""><span class="material-icons">logout</span></a>
+                            </div>
+                        </div>
+                    {% else %}
+                        <a class="nav-item nav-link" href=""><span class="material-icons">login</span></a>
+                    {% endif %}
                 </div>
                 </div>
             </div>

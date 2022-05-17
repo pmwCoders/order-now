@@ -4,15 +4,11 @@
     {% for product in products %}
         <article class="media content-section ml-5">
             <div class="media-body">
-                {% load static %}
-                <img src="{% static 'shop/images.png' %}" class="img-fluid icon" alt="My image">
-            <h3><a class="article-title" href="#">{{ product.name }}</a></h3>
-            {% load static %}
-            <img src="{% static 'shop/coxinha4.png' %}" class="product-img" alt="My image">
             <br>
+            <h3>{{ product.name }}</h3>
             <br>
-            <p class="article-content">Preço: {{ product.cost }}</p>
-            
+            <p class="article-content">Preço: R${{ product.cost }}</p>
+            <br>
             <div class="text-center">
                 <button class="btn btn-outline-info" type="submit">Adicionar ao pedido</button>
             </div>
